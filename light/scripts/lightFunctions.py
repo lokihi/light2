@@ -1,3 +1,9 @@
+# Подключение библиотек
+import numpy as np
+import matplotlib.pyplot as plt
+import imageio
+
+
 # Функция чтения фотографии
 def readIntensity(photoName, plotName, lamp, surface):
     photo = imageio.imread(photoName)
@@ -36,7 +42,7 @@ def calibration(m, my):
     return mn
 
 
-#Рассчет значений альбедо
+# Рассчет значений альбедо
 def albedo_znach(m1, m2, n):
     alb = []
     for i in range(n):
@@ -69,7 +75,7 @@ def intensities(my, mb, mw, mr, mg, mn):
     plt.savefig('intensities.png')
 
 
-#Построение графика альбедо
+# Построение графика альбедо
 def albedos(my, mb, mw, mr, mg, mn):
     fig = plt.figure(figsize=(10, 5), dpi=200)
     plt.plot(mn, my, "y", linewidth=0.8, label='Жёлтый лист')
